@@ -1,2 +1,2 @@
-import User from "./user"
-export default [User]
+import User from "./user.js";
+export default [User];
