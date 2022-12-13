@@ -11,12 +11,12 @@ export default {
     const updateduser = user.save({ name, email, password });
     return updateduser;
   },
-  delete: async id => {
+  delete: async (id) => {
     const count = userModel.destroy({
       where: { id },
     });
   },
-  findByPk: async id => {
+  findByPk: async (id) => {
     const user = await userModel.findByPk(id, {
       attributes: {
         exclude: ["password"],
@@ -26,7 +26,7 @@ export default {
     if (!user) return null;
     return user;
   },
-  findOne: async where => {
+  findOne: async (where) => {
     const user = userModel.findOne({
       where,
       attributes: {
@@ -37,7 +37,7 @@ export default {
     if (!user) return null;
     return user;
   },
-  findAll: async where => {
+  findAll: async (where) => {
     const user = userModel.findAll({
       where,
       attributes: {
@@ -47,7 +47,7 @@ export default {
     });
     return user;
   },
-  findAll: async  ()=> {
+  findAll: async () => {
     const user = userModel.findAll({
       where,
       attributes: {
